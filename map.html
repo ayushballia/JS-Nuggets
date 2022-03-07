@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      const data = [
+        {
+          name: "ayush",
+          last: "tiwari",
+          age: 26,
+          address: "ballia",
+        },
+        {
+          name: "radhe",
+          last: "tiwari",
+          age: 23,
+          address: "mau",
+        },
+        {
+          name: "shyam",
+          last: "tiwari",
+          age: 22,
+          address: "gorakhpur",
+        },
+        {
+          name: "hari",
+          last: "tiwari",
+          age: 20,
+          address: "kashi",
+        },
+      ];
+
+      const root = document.getElementById("root");
+
+      const people = data
+        .map((item) => {
+          const firstName = toCamelCase(item.name);
+          return `<h1>${firstName}</h1>`;
+        })
+        .join(" ");
+
+      root.innerHTML = people;
+
+      function toCamelCase(str) {
+        const first = str.charAt(0);
+        const rem = str.slice(1);
+        const final = first.toUpperCase() + rem;
+        return final;
+      }
+    </script>
+  </body>
+</html>
